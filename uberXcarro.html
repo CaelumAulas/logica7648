@@ -1,0 +1,30 @@
+<h1>Comparativo Uber e Carro</h1>
+
+Distância: 10km
+<br>
+
+<h3>Uber</h3>
+
+Custo final: R$17,60
+
+<h3>Carro</h3>
+
+<script>
+    var precoLitroGasolina
+    var distancia
+    var consumo
+    var valorGasolina
+    var valorEstacionamento
+    var custoFinalCarro
+    distancia = parseFloat(prompt("Digite a distância a percorrer"))
+    precoLitroGasolina = parseFloat(prompt("Digite o valor da gasolina"))
+    consumo = parseFloat(prompt("Digite o consumo do seu carro"))
+    valorGasolina = precoLitroGasolina*distancia/consumo
+    valorEstacionamento = parseFloat(prompt("Digite o valor do estacionamento"))
+    custoFinalCarro = valorGasolina+valorEstacionamento
+    document.write("Valor gasolina: R$"+valorGasolina.toFixed(2).replace(".",","))
+    document.write("<br>")
+    document.write("Valor estacionamento: R$"+valorEstacionamento.toFixed(2).replace(".",","))
+    document.write("<br>")
+    document.write("Custo final: R$"+custoFinalCarro.toFixed(2).replace(".",",")) 
+</script>
