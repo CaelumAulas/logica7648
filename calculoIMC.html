@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<h1>Calculadora de IMC</h1>
+
+<script>
+    var peso
+    var altura
+    var imc
+
+    peso = prompt("Digite seu peso")
+    altura = prompt("Digite sua altura")
+    imc = peso/(altura*altura)
+
+    document.write("Peso="+peso)
+    document.write("<br>")
+    document.write("Altura="+altura)
+    document.write("<br>")
+    document.write("O seu IMC é: "+imc.toFixed(2))
+</script>
