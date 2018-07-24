@@ -1,22 +1,26 @@
 <meta charset="utf-8">
 <h1>Comparativo Uber e Carro</h1>
 <script src="pegaNumeroBrasileiro.js"></script>
+<script src="https://bit.ly/2OhfTAi"></script>
 <script>
     var distancia
     textoDoPrompt="Digite a distância a percorrer"
     distancia = pegaNumeroBrasileiro()
+    var velocidadeMedia=40
+    var tempoEmHoras
+    tempoEmHoras=distancia/velocidadeMedia
+    var tempoEmMinutos=tempoEmHoras*60
+    tempo = tempoEmMinutos
     document.write(`
         Distância: ${distancia}km
         <br>
+        Tempo: ${formataRelogio()}min
+        <br>
     `)
     var taxaPorKm=1.4
-    var velocidadeMedia=40
-    var tempoEmHoras
     var taxaPorMinuto=0.26
     var taxaInicial=2
     var custoFinalUber
-    tempoEmHoras=distancia/velocidadeMedia
-    var tempoEmMinutos=tempoEmHoras*60
     custoFinalUber=distancia*taxaPorKm+tempoEmMinutos*taxaPorMinuto+taxaInicial
     document.write(`
         <h3>Uber</h3>
