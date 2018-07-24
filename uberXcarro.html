@@ -1,8 +1,13 @@
 <meta charset="utf-8">
 <h1>Comparativo Uber e Carro</h1>
 <script>
+    var textoDoPrompt
+    function pegaNumeroBrasileiro() {
+        return  parseFloat(prompt(textoDoPrompt).replace(",","."))
+    } 
     var distancia
-    distancia = parseFloat(prompt("Digite a distância a percorrer"))
+    textoDoPrompt="Digite a distância a percorrer"
+    distancia = pegaNumeroBrasileiro()
     document.write(`
         Distância: ${distancia}km
         <br>
@@ -25,10 +30,13 @@
     var valorGasolina
     var valorEstacionamento
     var custoFinalCarro
-    precoLitroGasolina = parseFloat(prompt("Digite o valor da gasolina"))
-    consumo = parseFloat(prompt("Digite o consumo do seu carro"))
+    textoDoPrompt="Digite o valor da gasolina"
+    precoLitroGasolina = pegaNumeroBrasileiro()
+    textoDoPrompt="Digite o consumo do seu carro"
+    consumo = pegaNumeroBrasileiro()
     valorGasolina = precoLitroGasolina*distancia/consumo
-    valorEstacionamento = parseFloat(prompt("Digite o valor do estacionamento"))
+    textoDoPrompt="Digite o valor do estacionamento"
+    valorEstacionamento = pegaNumeroBrasileiro()
     custoFinalCarro = valorGasolina+valorEstacionamento
     document.write(`
         <h3>Carro</h3>
