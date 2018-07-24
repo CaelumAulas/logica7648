@@ -22,9 +22,10 @@ Custo final: R$17,60
     valorGasolina = precoLitroGasolina*distancia/consumo
     valorEstacionamento = parseFloat(prompt("Digite o valor do estacionamento"))
     custoFinalCarro = valorGasolina+valorEstacionamento
-    document.write("Valor gasolina: R$"+valorGasolina.toFixed(2).replace(".",","))
-    document.write("<br>")
-    document.write("Valor estacionamento: R$"+valorEstacionamento.toFixed(2).replace(".",","))
-    document.write("<br>")
-    document.write("Custo final: R$"+custoFinalCarro.toFixed(2).replace(".",",")) 
+    document.write(`
+                    Valor gasolina: R$${valorGasolina.toFixed(2).replace(".",",")}
+                    <br>
+                    Valor estacionamento: R$${valorEstacionamento.toFixed(2).replace(".",",")}
+                    <br>
+                    Custo final: R$${custoFinalCarro.toFixed(2).replace(".",",")}`) 
 </script>
