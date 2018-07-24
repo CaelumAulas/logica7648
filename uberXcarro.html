@@ -11,11 +11,10 @@
     var tempoEmHoras
     tempoEmHoras=distancia/velocidadeMedia
     var tempoEmMinutos=tempoEmHoras*60
-    tempo=tempoEmMinutos
     document.write(`
         Distância: ${distancia}km
         <br>
-        Tempo: ${formataRelogio()}min
+        Tempo: ${formataRelogio(tempoEmMinutos)}min
         <br>
     `)
     var taxaPorKm=1.4
