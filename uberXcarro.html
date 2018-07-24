@@ -1,31 +1,40 @@
+<meta charset="utf-8">
 <h1>Comparativo Uber e Carro</h1>
-
-Distância: 10km
-<br>
-
-<h3>Uber</h3>
-
-Custo final: R$17,60
-
-<h3>Carro</h3>
-
 <script>
-    var precoLitroGasolina
     var distancia
+    distancia = parseFloat(prompt("Digite a distância a percorrer"))
+    document.write(`
+        Distância: ${distancia}km
+        <br>
+    `)
+    var taxaPorKm=1.4
+    var velocidadeMedia=40
+    var tempo
+    var taxaPorMinuto=0.26
+    var taxaInicial=2
+    var custoFinalUber
+    tempo=distancia/velocidadeMedia
+    custoFinalUber=distancia*taxaPorKm+tempo*taxaPorMinuto+taxaInicial
+    document.write(`
+        <h3>Uber</h3>
+        Custo final: R$${custoFinalUber.toFixed(2).replace(".",",")}
+    `)
+    var precoLitroGasolina
     var consumo
     var valorGasolina
     var valorEstacionamento
     var custoFinalCarro
-    distancia = parseFloat(prompt("Digite a distância a percorrer"))
     precoLitroGasolina = parseFloat(prompt("Digite o valor da gasolina"))
     consumo = parseFloat(prompt("Digite o consumo do seu carro"))
     valorGasolina = precoLitroGasolina*distancia/consumo
     valorEstacionamento = parseFloat(prompt("Digite o valor do estacionamento"))
     custoFinalCarro = valorGasolina+valorEstacionamento
     document.write(`
-                    Valor gasolina: R$${valorGasolina.toFixed(2).replace(".",",")}
-                    <br>
-                    Valor estacionamento: R$${valorEstacionamento.toFixed(2).replace(".",",")}
-                    <br>
-                    Custo final: R$${custoFinalCarro.toFixed(2).replace(".",",")}`) 
+        <h3>Carro</h3>
+        Valor gasolina: R$${valorGasolina.toFixed(2).replace(".",",")}
+        <br>
+        Valor estacionamento: R$${valorEstacionamento.toFixed(2).replace(".",",")}
+        <br>
+        Custo final: R$${custoFinalCarro.toFixed(2).replace(".",",")}
+    `) 
 </script>
