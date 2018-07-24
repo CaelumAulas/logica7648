@@ -5,8 +5,7 @@
 <script src="https://bit.ly/2OhfTAi"></script>
 <script>
     var distancia
-    textoDoPrompt="Digite a distância a percorrer"
-    distancia = pegaNumeroBrasileiro()
+    distancia = pegaNumeroBrasileiro("Digite a distância a percorrer")
     var velocidadeMedia=40
     var tempoEmHoras
     tempoEmHoras=distancia/velocidadeMedia
@@ -31,13 +30,10 @@
     var valorGasolina
     var valorEstacionamento
     var custoFinalCarro
-    textoDoPrompt="Digite o valor da gasolina"
-    precoLitroGasolina = pegaNumeroBrasileiro()
-    textoDoPrompt="Digite o consumo do seu carro"
-    consumo = pegaNumeroBrasileiro()
+    precoLitroGasolina = pegaNumeroBrasileiro("Digite o valor da gasolina")
+    consumo = pegaNumeroBrasileiro("Digite o consumo do seu carro")
     valorGasolina = precoLitroGasolina*distancia/consumo
-    textoDoPrompt="Digite o valor do estacionamento"
-    valorEstacionamento = pegaNumeroBrasileiro()
+    valorEstacionamento = pegaNumeroBrasileiro("Digite o valor do estacionamento")
     custoFinalCarro = valorGasolina+valorEstacionamento
     document.write(`
         <h3>Carro</h3>
