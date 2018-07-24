@@ -9,12 +9,13 @@
     `)
     var taxaPorKm=1.4
     var velocidadeMedia=40
-    var tempo
+    var tempoEmHoras
     var taxaPorMinuto=0.26
     var taxaInicial=2
     var custoFinalUber
-    tempo=distancia/velocidadeMedia
-    custoFinalUber=distancia*taxaPorKm+tempo*taxaPorMinuto+taxaInicial
+    tempoEmHoras=distancia/velocidadeMedia
+    var tempoEmMinutos=tempoEmHoras*60
+    custoFinalUber=distancia*taxaPorKm+tempoEmMinutos*taxaPorMinuto+taxaInicial
     document.write(`
         <h3>Uber</h3>
         Custo final: R$${custoFinalUber.toFixed(2).replace(".",",")}
