@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <h1>Comparativo Uber e Carro</h1>
 <script src="pegaNumeroBrasileiro.js"></script>
+<script src="formata.js"></script>
 <!-- libRelogio.js; função formataRelogio() -->
 <script src="https://bit.ly/2OhfTAi"></script>
 <script>
@@ -23,7 +24,7 @@
     custoFinalUber=distancia*taxaPorKm+tempoEmMinutos*taxaPorMinuto+taxaInicial
     document.write(`
         <h3>Uber</h3>
-        Custo final: R$${custoFinalUber.toFixed(2).replace(".",",")}
+        Custo final: ${formataMoeda(custoFinalUber)}
     `)
     var precoLitroGasolina
     var consumo
@@ -37,10 +38,10 @@
     custoFinalCarro = valorGasolina+valorEstacionamento
     document.write(`
         <h3>Carro</h3>
-        Valor gasolina: R$${valorGasolina.toFixed(2).replace(".",",")}
+        Valor gasolina: ${formataMoeda(valorGasolina)}
         <br>
-        Valor estacionamento: R$${valorEstacionamento.toFixed(2).replace(".",",")}
+        Valor estacionamento: ${formataMoeda(valorEstacionamento)}
         <br>
-        Custo final: R$${custoFinalCarro.toFixed(2).replace(".",",")}
+        Custo final: ${formataMoeda(custoFinalCarro)}
     `) 
 </script>
