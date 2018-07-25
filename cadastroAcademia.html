@@ -18,12 +18,16 @@ Data de Nascimento:
 <br>
 <input id="campoData">
 <br><br>
+<input type="checkbox" id="campoSaude"> Tem problemas cardíacos
+<br><br>
 <button onclick="cadastraCliente()">Cadastro</button>
 <script src="pegaNumeroBrasileiro.js"></script>
 <!-- libIdade.js; usar função calculaIdade() -->
 <script src="https://bit.ly/2A7h2Yh"></script>
 <!-- libBrasil.js; usar função parseFloatBrasil() e formataFloatBrasil() -->
 <script src="https://bit.ly/2LNzAOM"></script>
+<!-- libImpressao.js; usar função mostra() -->
+<script src="https://bit.ly/2LRPvvD"></script>
 
 <script>
 function cadastraCliente() {
@@ -36,11 +40,13 @@ function cadastraCliente() {
     var mesNascimento
     var anoNascimento
     var idade
+    var temProblemasCardiacos
+    var fraseDeAcompanhamento
     nome = campoNome.value
     peso = parseFloatBrasil(campoPeso.value)
     altura = parseFloatBrasil(campoAltura.value)
     dataNascimento = campoData.value
-
+    
     dataSeparada = dataNascimento.split("/")
     diaNascimento = dataSeparada[0]
     mesNascimento = dataSeparada[1]
@@ -48,7 +54,16 @@ function cadastraCliente() {
 
     idade = calculaIdade(diaNascimento,mesNascimento,anoNascimento)
 
-    document.write(`
+    temProblemasCardiacos = campoSaude.checked
+
+    if (temProblemasCardiacos) {
+        fraseDeAcompanhamento = "Necessita acompanhamento médico"
+    }
+    if (!temProblemasCardiacos) {
+        fraseDeAcompanhamento = "NÃO precisa de acompanhamento"
+    }
+
+    mostra(`
         Nome: ${nome}
         <br>
         Peso: ${formataFloatBrasil(peso)}kg
@@ -58,6 +73,8 @@ function cadastraCliente() {
         Data de nascimento: ${dataNascimento}
         <br>
         Idade: ${idade} anos
+        <br>
+        ${fraseDeAcompanhamento}
     `)
 }
 </script>
