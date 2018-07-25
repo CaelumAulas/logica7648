@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+
+<h1>Cadastro Academia</h1>
+<script src="pegaNumeroBrasileiro.js"></script>
+<!-- libIdade.js; usar função calculaIdade() -->
+<script src="https://bit.ly/2A7h2Yh"></script>
+<script>
+    var nome
+    var peso
+    var altura
+    var dataNascimento
+    var dataSeparada
+    var diaNascimento
+    var mesNascimento
+    var anoNascimento
+    var idade
+    nome = prompt("Digite o nome do cliente")
+    peso = pegaNumeroBrasileiro("Digite o peso do cliente")
+    altura = pegaNumeroBrasileiro("Digite a altura do cliente")
+    dataNascimento = prompt("Digite a data de nascimento")
+
+    dataSeparada = dataNascimento.split("/")
+    diaNascimento = dataSeparada[0]
+    mesNascimento = dataSeparada[1]
+    anoNascimento = dataSeparada[2]
+
+    idade = calculaIdade(diaNascimento,mesNascimento,anoNascimento)
+
+    document.write(`
+        Nome: ${nome}
+        <br>
+        Peso: ${peso}kg
+        <br>
+        Altura: ${altura}m
+        <br>
+        Data de nascimento: ${dataNascimento}
+        <br>
+        Idade: ${idade} anos
+    `)
+</script>
