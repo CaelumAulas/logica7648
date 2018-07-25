@@ -22,6 +22,9 @@ Data de Nascimento:
 <script src="pegaNumeroBrasileiro.js"></script>
 <!-- libIdade.js; usar função calculaIdade() -->
 <script src="https://bit.ly/2A7h2Yh"></script>
+<!-- libBrasil.js; usar função parseFloatBrasil() e formataFloatBrasil() -->
+<script src="https://bit.ly/2LNzAOM"></script>
+
 <script>
 function cadastraCliente() {
     var nome
@@ -34,8 +37,8 @@ function cadastraCliente() {
     var anoNascimento
     var idade
     nome = campoNome.value
-    peso = campoPeso.value
-    altura = campoAltura.value
+    peso = parseFloatBrasil(campoPeso.value)
+    altura = parseFloatBrasil(campoAltura.value)
     dataNascimento = campoData.value
 
     dataSeparada = dataNascimento.split("/")
@@ -48,9 +51,9 @@ function cadastraCliente() {
     document.write(`
         Nome: ${nome}
         <br>
-        Peso: ${peso}kg
+        Peso: ${formataFloatBrasil(peso)}kg
         <br>
-        Altura: ${altura}m
+        Altura: ${formataFloatBrasil(altura)}m
         <br>
         Data de nascimento: ${dataNascimento}
         <br>
