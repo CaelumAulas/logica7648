@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+
+<h1>Jogo da Loteria</h1>
+
+Quantos números quer sortear?
+<br>
+<input id="campoQteNumeros">
+<br><br>
+<button onclick="jogoAdivinhacao()">START</button>
+<script src="https://bit.ly/2LRPvvD"></script>
+<script src="pegaNumeroBrasileiro.js"></script>
+<script>
+    var numeroJogo = 0
+
+    function jogoAdivinhacao() {
+        numeroJogo = numeroJogo + 1
+        
+        var qteDeSorteios = campoQteNumeros.value
+        var listaNumerosMisteriosos = []
+        var i = 0
+        while(i < qteDeSorteios) {
+            var numeroMisterioso = parseInt(Math.random()*100)+1
+            console.log("Numero misterioso:" + numeroMisterioso)
+            listaNumerosMisteriosos.push(numeroMisterioso)
+            i = i + 1
+        }
+        console.log(listaNumerosMisteriosos)
+
+
+        var numeroChute = pegaNumeroBrasileiro("Adivinhe o número de 1 a 100")
+        var contadorDeValidacoes=0
+        // ENQUANTO o chute é invalido (não número OU maior que 100 OU menor que 1)
+        while (isNaN(numeroChute) || numeroChute > 100 || numeroChute < 1) {
+            // SE estourar limite de validações
+            if (contadorDeValidacoes == 3) {
+                alert("Game Over!")
+                mostra(`
+                    Jogo ${numeroJogo}
+                    <br>
+                    Perdeu por erro de validação
+                `)
+                return //sai da função
+            }
+            numeroChute = pegaNumeroBrasileiro("Número inválido! Adivinhe o número de 1 a 100")
+            contadorDeValidacoes=contadorDeValidacoes+1
+        }
+        
+
+        var resultado
+        //SE lista contem numeroChute, acertou; SENAO, errou
+        if (listaNumerosMisteriosos.includes(numeroChute)) {
+            resultado = "Acertou!"
+        } else {
+            resultado = "Errou!"
+        }
+        
+        mostra(`
+            Jogo ${numeroJogo}
+            <br>
+            ${resultado}
+            <br>
+            Os números eram ${listaNumerosMisteriosos}.
+        `)
+    }
+</script>
