@@ -12,11 +12,20 @@
         numeroJogo = numeroJogo + 1
         var numeroMisterioso = parseInt(Math.random()*100)+1
         console.log("Numero misterioso:" + numeroMisterioso)
-
+        
         var numeroChute = pegaNumeroBrasileiro("Adivinhe o número de 1 a 100")
+        var contadorDeValidacoes=0
         // ENQUANTO numero do chute é invalido (maior que 100 OU menor que 1)
         while (numeroChute > 100 || numeroChute < 1) {
+            // SE estourar limite de validações
+            if (contadorDeValidacoes == 3) {
+                alert("Game Over!")
+                break; //para de repetir o loop (termina esse jogo)
+            }
+
             numeroChute = pegaNumeroBrasileiro("Número inválido! Adivinhe o número de 1 a 100")
+
+            contadorDeValidacoes=contadorDeValidacoes+1
         }
         
 
