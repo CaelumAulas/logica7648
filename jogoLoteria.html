@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+
+<h1>Jogo da Loteria</h1>
+
+<button onclick="jogoAdivinhacao()">START</button>
+<script src="https://bit.ly/2LRPvvD"></script>
+<script>
+    var numeroJogo = 0
+
+    function jogoAdivinhacao() {
+        numeroJogo = numeroJogo + 1
+        var numeroMisterioso = parseInt(Math.random()*100)+1
+        console.log("Numero misterioso:" + numeroMisterioso)
+
+        var numeroChute = prompt("Adivinhe o número de 1 a 100")
+        var resultado
+
+        if (numeroMisterioso == numeroChute) {
+            resultado = "Acertou!"
+        }
+        if (numeroMisterioso != numeroChute) {
+            resultado = "Errou!"
+        }
+        
+        mostra(`
+            Jogo ${numeroJogo}
+            <br>
+            ${resultado}
+            <br>
+            O número era ${numeroMisterioso}.
+        `)
+    }
+</script>
