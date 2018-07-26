@@ -5,9 +5,11 @@
 <script src="https://bit.ly/2LRPvvD"></script>
 <!-- pegaPaisCopa() -->
 <script src="https://bit.ly/2AeqKZ5"></script>
+<!-- pegaAnoAtual() -->
+<script src="https://bit.ly/2A7h2Yh"></script>
 <script>
     var anoDaCopa = 1930
-    while (anoDaCopa<=2018) {
+    while (anoDaCopa <= pegaAnoAtual()) {
         mostra(`${anoDaCopa} - ${pegaPaisCopa(anoDaCopa)}`)
         anoDaCopa = anoDaCopa+4
     }
