@@ -4,6 +4,7 @@
 
 <button onclick="jogoAdivinhacao()">START</button>
 <script src="https://bit.ly/2LRPvvD"></script>
+<script src="pegaNumeroBrasileiro.js"></script>
 <script>
     var numeroJogo = 0
 
@@ -12,9 +13,10 @@
         var numeroMisterioso = parseInt(Math.random()*100)+1
         console.log("Numero misterioso:" + numeroMisterioso)
 
-        var numeroChute = prompt("Adivinhe o número de 1 a 100")
-        var resultado
+        var numeroChute = pegaNumeroBrasileiro("Adivinhe o número de 1 a 100")
+        
 
+        var resultado
         if (numeroMisterioso == numeroChute) {
             resultado = "Acertou!"
         }
