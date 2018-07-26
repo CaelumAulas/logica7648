@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+
+<h1>Jogo da Adivinhação</h1>
+
+<button onclick="jogoAdivinhacao()">START</button>
+<script src="https://bit.ly/2LRPvvD"></script>
+<script>
+    var numeroJogo = 0
+
+    function jogoAdivinhacao() {
+        numeroJogo = numeroJogo + 1
+        var numeroMisterioso = prompt("Escolha o número misterioso")
+        var numeroChute = prompt("Adivinhe o número")
+        var resultado
+
+        if (numeroMisterioso == numeroChute) {
+            resultado = "Acertou!"
+        }
+        if (numeroMisterioso != numeroChute) {
+            resultado = "Errou!"
+        }
+        
+        mostra(`
+            Jogo ${numeroJogo}
+            <br>
+            ${resultado}
+            <br>
+            O número era ${numeroMisterioso}.
+        `)
+    }
+</script>
