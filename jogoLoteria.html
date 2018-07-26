@@ -14,8 +14,8 @@
         console.log("Numero misterioso:" + numeroMisterioso)
 
         var numeroChute = pegaNumeroBrasileiro("Adivinhe o número de 1 a 100")
-        // SE numero do chute é invalido (maior que 100 OU menor que 1)
-        if (numeroChute > 100 || numeroChute < 1) {
+        // ENQUANTO numero do chute é invalido (maior que 100 OU menor que 1)
+        while (numeroChute > 100 || numeroChute < 1) {
             numeroChute = pegaNumeroBrasileiro("Número inválido! Adivinhe o número de 1 a 100")
         }
         
